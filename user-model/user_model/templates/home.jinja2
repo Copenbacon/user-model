@@ -1,0 +1,10 @@
+{% extends "layout.jinja2" %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+
+<ul>
+{% for user in usernames %}
+    <li>{{user}}</li>
+</ul>

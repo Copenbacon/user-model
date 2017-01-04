@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}User Model{% endblock %}</title>
+</head>
+<body>
+    <nav>
+    <ul>
+      <li><a href="{{ request.route_url('Home') }}">Users</a></li>
+      {% if request.authenticated_userid %}
+        <li><a href="{{ request.route_url('profile') }}">View Profile</a></li>
+        <li><a href="{{ request.route_url('logout') }}">Log Out</a></li>
+      {% else %}
+        <li><a href="{{ request.route_url('login') }}">Log In</a></li>
+        <li><a href="{{ request.route_url('registration') }}">Register</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% block body %}
+    A simple app for accessing Users in a database
+  {% endblock %}
+</body>
+</html>
